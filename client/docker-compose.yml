@@ -1,0 +1,13 @@
+version: "3.6"
+
+services:
+  search-client: 
+    image: luongquocdat01091995/wordpress-application:client
+    environment: 
+        - SERVER_IP=192.168.2.83
+        - SERVER_PORT=8000
+    restart: on-failure
+    deploy: 
+      placement: 
+        constraints:
+          - node.labels.node_number==4
